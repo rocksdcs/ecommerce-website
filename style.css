@@ -98,3 +98,11 @@ nav {
     align-content: center;
 }
 
+,sidenav_container {
+    transform: translateX(-100%);
+}
+
+
+input:checked ~ .sidenav_container {
+    transform: translateX(0);
+}
