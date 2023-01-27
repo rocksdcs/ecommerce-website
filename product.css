@@ -18,7 +18,7 @@ body {
     overflow-x: hidden;
 
 }
-
+/*Beginning of the Nav*/
 nav {
     background: #000;
     min-height: 60px;
@@ -27,11 +27,12 @@ nav {
     justify-content: space-between;
     align-items: center;
 }
-
+/*the three line icon in the corner of the nav*/
 .menu_icon {
     cursor: pointer;
     margin-right: 15px;
 }
+
 
 .bar {
     display: block;
