@@ -12,15 +12,16 @@ html {
 body {
     width: 100%;
     height: auto;
-    background: rgb(25, 25, 25);
+    background: rgb(116, 116, 116);
     color: #000;
     scroll-behavior: smooth;
+    overflow-x: hidden;
 
 }
 
 nav {
     background: #000;
-    min-height: 50px;
+    min-height: 60px;
     color: #fff;
     display: flex;   
     justify-content: space-between;
@@ -31,25 +32,55 @@ nav {
 }
 
 .menu_icon {
-    margin-left: 15px;
-}
-
-.ig_icon {
+    cursor: pointer;
     margin-right: 15px;
 }
 
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    background: white;
+}
+
+.menu_icon.active .bar:nth-child(2){
+    opacity: 0;
+}
+
+.menu_icon.active .bar:nth-child(1){
+    transform: translateY(8px) rotate(45deg);
+}
+
+.menu_icon.active .bar:nth-child(3){
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+.cart_icon {
+    margin-left: 15px;
+    align-content: center;
+    place-items: center;
+    display: grid;
+    cursor: pointer;
+}
+
 .logo {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
-    letter-spacing: 1px;
     text-transform: uppercase;
+    align-content: center;
+    place-items: center;
+    display: grid;
+    cursor: pointer;
 }
 
 .content {
     display: grid;
     align-content: center;
     place-items: center;
-    margin-top: 100px;
+    margin-top: 30px;
 }
 
 .content a {
@@ -63,14 +94,19 @@ nav {
     width: 85%;
     place-items: center;
     align-content: center;
-    min-height: 40px;
-    margin-top: 10px;
+    min-height: 60px;
     background: rgb(0, 0, 0);
     color: white;
     font-size: 20px;
     font-weight: bold;
-    border-radius: 10px;
-    box-shadow: 5px 5px 10px black;
+    border: none;
+    text-transform: uppercase;
+
+}
+
+.content button:active {
+    background: magenta;
+    color: black;
     border: none;
 }
 
@@ -78,16 +114,14 @@ nav {
 
 .content img {
     width: 85%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 5px 5px 10px #000;
+    height: 100%;
+    display: grid;
+    place-items: center;
 }
 
 .content h2 {
     color: #fff;
-    min-height: 40px;
-    border-radius: 10px;
-    margin-bottom: 0px;
+    min-height: 50px;
     background: black;
     font-size: 24px;
     width: 85%;
@@ -96,23 +130,26 @@ nav {
     align-content: center;
 }
 
-input {
-    display: none;
-}
 
 .sidenav_container {
-    position: absolute;
-    transform: translateX(-100%);
+    position: fixed;
+    right: -100%;
     background: black;
+    gap: 0;
     z-index: 5;
     width: 100%;
     top: 70px;
-    transition:1s;
+    text-align: center;
+    transition: 1s ease-in-out;
     scroll-behavior: smooth;
-    border-radius: 50px;
-    opacity: 0.8;
+    border-radius: 20px;
+    opacity: 1;
 
     
+}
+
+.sidenav_container.active {
+    right: 0;
 }
 
 .sidenav_container a {
@@ -127,9 +164,4 @@ input {
 
 .sidenav_container a:active {
     color: magenta;
-}
-
-
-input:checked ~ .sidenav_container {
-    transform: translateX(0);
 }
