@@ -14,21 +14,19 @@ body {
     height: auto;
     background: rgb(25, 25, 25);
     color: #000;
+    scroll-behavior: smooth;
 
 }
 
 nav {
-    width: 100%;
-    position: fixed;
-    z-index: 2;
     background: #000;
     min-height: 40px;
     color: #fff;
     display: flex;   
     justify-content: space-between;
     align-items: center;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
     box-shadow: 5px 5px 10px black;
 }
 
@@ -98,8 +96,36 @@ nav {
     align-content: center;
 }
 
-,sidenav_container {
+input {
+    display: none;
+}
+
+.sidenav_container {
+    position: absolute;
     transform: translateX(-100%);
+    background: black;
+    z-index: 5;
+    width: 100%;
+    top: 50px;
+    transition:1s;
+    scroll-behavior: smooth;
+    border-radius: 50px;
+
+    
+}
+
+.sidenav_container a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    line-height: 60px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.sidenav_container a:active {
+    color: magenta;
 }
 
 
